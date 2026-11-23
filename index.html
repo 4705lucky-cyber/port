@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>포트폴리오 — 김도건 (풍천중학교 3학년)</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Pretendard', 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    }
+    .glass-nav {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #111827 !important;
+      }
+      section {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-200">
+
+  <!-- Top Navigation -->
+  <header class="no-print sticky top-0 z-40 glass-nav bg-white/85 dark:bg-slate-950/85 border-b border-slate-200/80 dark:border-slate-800/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <a href="#top" class="flex items-center gap-2.5 font-bold text-lg tracking-tight text-slate-900 dark:text-white shrink-0">
+        <span class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center">
+          <i data-lucide="layers" class="w-4 h-4"></i>
+        </span>
+        <span id="nav-name">김도건</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#about" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">소개</a>
+        <a href="#skills" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">역량 및 관심</a>
+        <a href="#projects" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">활동·프로젝트</a>
+        <a href="#experience" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">학교 활동·이력</a>
+        <a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">마무리</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 shrink-0">
+        <button id="edit-profile-btn" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-50 text-indigo-700 hover:bg-indigo-100 dark:bg-indigo-950/60 dark:text-indigo-300 dark:hover:bg-indigo-900/60 transition-colors">
+          <i data-lucide="pencil" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">기본 정보 수정</span>
+        </button>
+        <button id="print-btn" type="button" title="PDF 저장 / 인쇄" class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800 transition-colors">
+          <i data-lucide="printer" class="w-4 h-4"></i>
+        </button>
+        <button id="theme-toggle" type="button" title="테마 전환" class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800 transition-colors">
+          <i data-lucide="moon" class="w-4 h-4 dark:hidden"></i>
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+        </button>
+        <button id="mobile-menu-btn" type="button" aria-label="메뉴 열기" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 transition-colors">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-4 py-3 space-y-1">
+      <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">소개</a>
+      <a href="#skills" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">역량 및 관심</a>
+      <a href="#projects" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">활동·프로젝트</a>
+      <a href="#experience" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">학교 활동·이력</a>
+      <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">마무리</a>
+    </div>
+  </header>
+
+  <main id="top" class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-20 sm:space-y-24">
+
+    <!-- 1. Hero Section -->
+    <section class="pt-4 sm:pt-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <div class="lg:col-span-8 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/70 dark:bg-indigo-950/60 dark:text-indigo-300 dark:border-indigo-800/70">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span id="hero-role">풍천중학교 3학년 · 다양한 분야 탐색 중</span>
+          </div>
+
+          <h1 id="hero-headline" class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.2]">
+            안녕하세요, 풍천중학교 3학년 김도건입니다.
+          </h1>
+
+          <p id="hero-bio" class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
+            아직 특정 진로를 하나로 정하기보다, 2021년 도대회 과학 발명회(펠티어 소자 활용) 참가 같은 다양한 도전과 학교생활을 통해 나만의 관심사와 강점을 탐색하고 있습니다.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="#projects" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm shadow-indigo-500/20 transition-all">
+              <span>주요 활동 보기</span>
+              <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#experience" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-800 transition-all">
+              <i data-lucide="award" class="w-4 h-4"></i>
+              <span>학교 활동·이력</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Profile Summary Card -->
+        <div class="lg:col-span-4">
+          <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 shadow-sm space-y-5">
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white flex items-center justify-center shrink-0 shadow-inner">
+                <i data-lucide="user" class="w-8 h-8"></i>
+              </div>
+              <div class="min-w-0">
+                <p id="card-name" class="font-bold text-lg text-slate-900 dark:text-white truncate">김도건</p>
+                <p id="card-location" class="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-0.5">
+                  <i data-lucide="graduation-cap" class="w-3.5 h-3.5 shrink-0"></i>
+                  <span>풍천중학교 3학년</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-2 pt-4 border-t border-slate-100 dark:border-slate-800 text-center">
+              <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60">
+                <p class="text-lg font-bold text-indigo-600 dark:text-indigo-400">중3</p>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">현재 학년</p>
+              </div>
+              <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60">
+                <p class="text-lg font-bold text-indigo-600 dark:text-indigo-400">도대회</p>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">과학 발명회</p>
+              </div>
+              <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-800/60">
+                <p class="text-lg font-bold text-indigo-600 dark:text-indigo-400">탐색 중</p>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">진로 방향</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. About & Core Strengths -->
+    <section id="about" class="scroll-mt-24 space-y-8">
+      <div class="space-y-2">
+        <p class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">About &amp; Strengths</p>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">나의 강점과 배우는 태도</h2>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400">새로운 경험에 도전하고 배우며 성장해 온 김도건 학생의 핵심 태도입니다.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 hover:border-indigo-300 dark:hover:border-indigo-700 transition-colors">
+          <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/70 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
+            <i data-lucide="compass" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">호기심과 탐구력</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            펠티어 소자처럼 일상에서 접하기 쉬운 과학 원리에도 관심을 갖고, 직접 구조를 고민하고 실험으로 확인하는 과정을 즐깁니다.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 hover:border-indigo-300 dark:hover:border-indigo-700 transition-colors">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">열린 진로 탐색</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            한 가지 진로에 미리 선을 긋기보다 다양한 교과 활동과 도전을 경험하며 스스로 잘하고 좋아하는 분야를 넓혀가고 있습니다.
+          </p>
+        </div>
+
+        <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 hover:border-indigo-300 dark:hover:border-indigo-700 transition-colors">
+          <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/70 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+            <i data-lucide="users" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-lg text-slate-900 dark:text-white">성실한 학교생활</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            풍천중학교에서 교과 수업과 모둠 활동에 성실히 참여하며 기본기를 다지고, 친구들과 협력해 과제를 완수합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Skills & Interests -->
+    <section id="skills" class="scroll-mt-24 space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div class="space-y-2">
+          <p class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Skills &amp; Interests</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">보유 역량 및 관심 영역</h2>
+        </div>
+
+        <div id="skill-filters" class="flex flex-wrap gap-2">
+          <button type="button" data-skill-cat="all" class="skill-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white dark:bg-white dark:text-slate-900 transition-colors">전체</button>
+          <button type="button" data-skill-cat="core" class="skill-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-800 dark:hover:bg-slate-800 transition-colors">탐구 · 학습 역량</button>
+          <button type="button" data-skill-cat="tools" class="skill-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-800 dark:hover:bg-slate-800 transition-colors">기초 활용 능력</button>
+        </div>
+      </div>
+
+      <div id="skills-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- 4. Featured Projects & Activities -->
+    <section id="projects" class="scroll-mt-24 space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div class="space-y-2">
+          <p class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Selected Works</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">대표 활동 및 프로젝트</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400">카드를 클릭하면 동기, 진행 과정, 배운 점이 담긴 상세 내용을 볼 수 있습니다.</p>
+        </div>
+
+        <div id="project-filters" class="flex flex-wrap gap-2">
+          <button type="button" data-proj-cat="all" class="proj-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white transition-colors">전체</button>
+          <button type="button" data-proj-cat="invention" class="proj-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-800 dark:hover:bg-slate-800 transition-colors">대회 · 발명</button>
+          <button type="button" data-proj-cat="school" class="proj-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-800 dark:hover:bg-slate-800 transition-colors">교과 · 학교생활</button>
+        </div>
+      </div>
+
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- 5. School Activities & History -->
+    <section id="experience" class="scroll-mt-24 space-y-8">
+      <div class="space-y-2">
+        <p class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">Activities &amp; History</p>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">학교 활동 및 주요 이력</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Timeline -->
+        <div class="lg:col-span-7 space-y-6">
+          <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-4 h-4 text-indigo-500"></i>
+            성장 기록
+          </h3>
+          <div class="relative pl-6 border-l-2 border-slate-200 dark:border-slate-800 space-y-8">
+            <div class="relative">
+              <span class="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-indigo-600 ring-4 ring-slate-50 dark:ring-slate-950"></span>
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h4 class="font-bold text-base text-slate-900 dark:text-white">풍천중학교 재학 (중1~중3)</h4>
+                <span class="text-xs font-medium text-slate-500 dark:text-slate-400">2024.03 — 현재</span>
+              </div>
+              <p class="text-sm font-medium text-indigo-600 dark:text-indigo-400 mt-0.5">교과 학습 및 학교생활</p>
+              <ul class="mt-2.5 space-y-1.5 text-sm text-slate-600 dark:text-slate-300 list-disc list-inside">
+                <li>정규 교과 수업과 수행평가, 모둠 활동에 성실히 참여</li>
+                <li>특정 진로를 서둘러 정하기보다 다양한 경험을 통해 관심 분야 탐색 중</li>
+              </ul>
+            </div>
+
+            <div class="relative">
+              <span class="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-700 ring-4 ring-slate-50 dark:ring-slate-950"></span>
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h4 class="font-bold text-base text-slate-900 dark:text-white">도대회 과학 발명회 참가</h4>
+                <span class="text-xs font-medium text-slate-500 dark:text-slate-400">2021</span>
+              </div>
+              <p class="text-sm font-medium text-indigo-600 dark:text-indigo-400 mt-0.5">펠티어 소자 활용 발명</p>
+              <ul class="mt-2.5 space-y-1.5 text-sm text-slate-600 dark:text-slate-300 list-disc list-inside">
+                <li>전류에 따라 냉각·발열이 일어나는 펠티어 소자의 열전 원리 탐구</li>
+                <li>발명 아이디어를 구체화해 도대회 과학 발명회에 참가하며 문제 해결 경험 축적</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education & Contest Summary -->
+        <div class="lg:col-span-5 space-y-6">
+          <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
+            <i data-lucide="award" class="w-4 h-4 text-indigo-500"></i>
+            학적 · 대회 이력
+          </h3>
+          <div class="space-y-4">
+            <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 space-y-1">
+              <div class="flex items-center justify-between gap-2">
+                <h4 class="font-bold text-sm text-slate-900 dark:text-white">풍천중학교</h4>
+                <span class="text-xs text-slate-500 dark:text-slate-400">2024 — 2027(예정)</span>
+              </div>
+              <p class="text-xs font-medium text-indigo-600 dark:text-indigo-400">중학교 3학년 재학 (김도건)</p>
+              <p class="text-xs text-slate-600 dark:text-slate-400 pt-1">특정 진로를 정하기보다 다양한 경험을 통해 가능성을 탐색 중</p>
+            </div>
+
+            <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 space-y-2">
+              <h4 class="font-bold text-sm text-slate-900 dark:text-white">주요 대회 참가 내역</h4>
+              <ul class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
+                <li class="flex items-center justify-between gap-2">
+                  <span>도대회 과학 발명회 참가 (펠티어 소자 활용)</span>
+                  <span class="text-slate-400 shrink-0">2021</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Closing Section -->
+    <section id="contact" class="scroll-mt-24">
+      <div class="rounded-3xl bg-slate-900 dark:bg-indigo-950/50 text-white border border-slate-800 dark:border-indigo-900/60 p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div class="space-y-3 max-w-xl">
+          <p class="text-xs font-bold uppercase tracking-widest text-indigo-400">Portfolio Summary</p>
+          <h2 class="text-2xl sm:text-3xl font-bold">김도건의 성장 기록</h2>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+            풍천중학교 3학년 김도건의 현재까지의 경험과 배움을 정리한 포트폴리오입니다. 앞으로 새로운 활동이 쌓일 때마다 상단 수정 버튼으로 내용을 업데이트할 수 있습니다.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row md:flex-col gap-3 w-full md:w-auto shrink-0">
+          <button id="footer-print-btn" type="button" class="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl text-sm font-semibold bg-white text-slate-900 hover:bg-slate-100 transition-colors">
+            <i data-lucide="printer" class="w-4 h-4 text-indigo-600"></i>
+            <span>PDF 저장 / 인쇄하기</span>
+          </button>
+          <a href="#top" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors">
+            <i data-lucide="arrow-up" class="w-4 h-4"></i>
+            <span>맨 위로 이동</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-500 dark:text-slate-400">
+    <p>&copy; 2026 <span id="footer-name">김도건</span>. All rights reserved.</p>
+  </footer>
+
+  <!-- Project Detail Modal -->
+  <div id="project-modal" class="no-print hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+      <div class="sticky top-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between gap-4">
+        <div>
+          <span id="modal-category" class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400"></span>
+          <h3 id="modal-title" class="text-lg font-bold text-slate-900 dark:text-white"></h3>
+        </div>
+        <button id="close-modal-btn" type="button" aria-label="닫기" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-6 space-y-6">
+        <div class="grid grid-cols-2 gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-sm">
+          <div>
+            <p class="text-xs text-slate-500 dark:text-slate-400">진행 시기</p>
+            <p id="modal-period" class="font-semibold text-slate-900 dark:text-white mt-0.5"></p>
+          </div>
+          <div>
+            <p class="text-xs text-slate-500 dark:text-slate-400">참여 형태</p>
+            <p id="modal-role" class="font-semibold text-slate-900 dark:text-white mt-0.5"></p>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <i data-lucide="target" class="w-4 h-4 text-indigo-500"></i>
+            시작 배경 및 주제
+          </h4>
+          <p id="modal-problem" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <i data-lucide="wrench" class="w-4 h-4 text-emerald-500"></i>
+            진행 과정 및 탐구
+          </h4>
+          <p id="modal-solution" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <i data-lucide="trending-up" class="w-4 h-4 text-amber-500"></i>
+            배운 점 및 의미
+          </h4>
+          <p id="modal-impact" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">핵심 키워드</h4>
+          <div id="modal-tags" class="flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Edit Profile Modal -->
+  <div id="edit-modal" class="no-print hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+      <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+        <h3 class="text-base font-bold text-slate-900 dark:text-white">기본 정보 수정</h3>
+        <button id="close-edit-btn" type="button" aria-label="닫기" class="p-1.5 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <form id="edit-profile-form" class="p-6 space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">이름</label>
+          <input id="input-name" type="text" placeholder="김도건" class="w-full px-3 py-2 rounded-lg text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">소속 · 상태</label>
+          <input id="input-role" type="text" placeholder="예: 풍천중학교 3학년 · 다양한 분야 탐색 중" class="w-full px-3 py-2 rounded-lg text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">한 줄 소개</label>
+          <input id="input-headline" type="text" placeholder="안녕하세요, 풍천중학교 3학년 김도건입니다." class="w-full px-3 py-2 rounded-lg text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">자기소개</label>
+          <textarea id="input-bio" rows="3" placeholder="경험과 강점을 적어보세요." class="w-full px-3 py-2 rounded-lg text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+        </div>
+        <div class="pt-2 flex justify-end gap-2">
+          <button type="button" id="cancel-edit-btn" class="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800">취소</button>
+          <button type="submit" class="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 text-white hover:bg-indigo-700">적용하기</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="no-print fixed bottom-6 right-6 z-50 translate-y-4 opacity-0 pointer-events-none transition-all duration-200 px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-semibold shadow-lg flex items-center gap-2">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 dark:text-emerald-600"></i>
+    <span id="toast-msg">알림</span>
+  </div>
+
+  <script>
+    const skillsData = [
+      { category: 'core', title: '과학 · 발명 탐구', level: '경험', items: ['펠티어 소자 원리', '아이디어 구상', '기초 실험 및 관찰'] },
+      { category: 'core', title: '학교생활 · 협업', level: '성실', items: ['교과 수업 참여', '모둠 과제 소통', '자료 조사 및 정리'] },
+      { category: 'tools', title: '기초 활용 능력', level: '활용', items: ['발표 자료 구성', '문서 작성', '정보 검색'] }
+    ];
+
+    const projectsData = [
+      {
+        id: 'p1',
+        category: 'invention',
+        categoryLabel: '대회 · 발명',
+        gradient: 'from-emerald-500 to-teal-600',
+        icon: 'trophy',
+        title: '도대회 과학 발명회 — 펠티어 소자 활용',
+        summary: '2021년 도대회 과학 발명회에 참가해 펠티어 소자의 열전 원리를 활용한 발명 아이디어를 구체화하고 도전한 경험입니다.',
+        period: '2021',
+        role: '참가자',
+        problem: '전기를 이용해 온도를 조절할 수 있는 펠티어 소자에 흥미를 느껴, 이를 실생활에 적용할 수 있는 발명 주제를 구상하며 도대회를 준비했습니다.',
+        solution: '전류를 흘리면 한쪽은 냉각되고 반대쪽은 발열되는 펠티어 소자의 특성을 탐구하고, 발명 구조와 작동 방식을 설계·실험하며 대회를 준비했습니다.',
+        impact: '도대회라는 큰 무대에 직접 아이디어를 출품하고 준비해 보면서, 과학 원리를 실제 문제 해결로 연결하는 즐거움과 도전 정신을 배웠습니다.',
+        tags: ['2021', '도대회', '과학 발명회', '펠티어 소자']
+      },
+      {
+        id: 'p2',
+        category: 'school',
+        categoryLabel: '교과 · 학교생활',
+        gradient: 'from-indigo-500 to-blue-600',
+        icon: 'book-open',
+        title: '풍천중학교 교과 학습 및 진로 탐색',
+        summary: '풍천중학교 재학 중 다양한 교과 수업과 모둠 활동에 성실히 참여하며 나에게 맞는 강점과 관심사를 넓혀가고 있습니다.',
+        period: '2024.03 — 현재',
+        role: '풍천중학교 3학년',
+        problem: '중학교 3학년 시기에 특정 진로를 하나로 단정하기보다, 여러 교과와 활동을 균형 있게 경험하며 가능성을 넓히는 데 집중했습니다.',
+        solution: '수업 시간의 탐구 과제와 모둠 협업을 성실히 수행하며, 자료를 정리하고 친구들과 의견을 나누는 기본 역량을 꾸준히 길렀습니다.',
+        impact: '다양한 경험을 편견 없이 받아들이는 태도와 기본에 충실한 학습 습관을 바탕으로 앞으로의 진로를 주도적으로 찾아갈 준비를 하고 있습니다.',
+        tags: ['풍천중학교', '중3', '진로 탐색', '성실함']
+      }
+    ];
+
+    let activeSkillCat = 'all';
+    let activeProjCat = 'all';
+    let toastTimer = null;
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-msg');
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-4', 'opacity-0');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('translate-y-4', 'opacity-0');
+      }, 2600);
+    }
+
+    function renderSkills() {
+      const grid = document.getElementById('skills-grid');
+      const filtered = activeSkillCat === 'all' ? skillsData : skillsData.filter(s => s.category === activeSkillCat);
+      grid.innerHTML = filtered.map(skill => `
+        <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 space-y-3">
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="font-bold text-sm text-slate-900 dark:text-white">${skill.title}</h3>
+            <span class="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300">${skill.level}</span>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            ${skill.items.map(item => `<span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">${item}</span>`).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderProjects() {
+      const grid = document.getElementById('projects-grid');
+      const filtered = activeProjCat === 'all' ? projectsData : projectsData.filter(p => p.category === activeProjCat);
+      grid.innerHTML = filtered.map(proj => `
+        <article data-project-id="${proj.id}" class="project-card group cursor-pointer rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden hover:border-indigo-400 dark:hover:border-indigo-600 hover:shadow-md transition-all flex flex-col">
+          <div class="h-40 bg-gradient-to-br ${proj.gradient} p-6 flex items-end justify-between text-white relative overflow-hidden">
+            <div class="relative z-10">
+              <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-semibold bg-white/20 backdrop-blur-sm mb-2">${proj.categoryLabel}</span>
+              <p class="text-xs text-white/85 font-medium">${proj.period}</p>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-white/15 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
+              <i data-lucide="${proj.icon}" class="w-6 h-6"></i>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">${proj.title}</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">${proj.summary}</p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
+              <div class="flex flex-wrap gap-1.5">
+                ${proj.tags.map(t => `<span class="px-2 py-0.5 rounded-md text-[11px] font-medium bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300">${t}</span>`).join('')}
+              </div>
+              <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 inline-flex items-center gap-1 shrink-0">
+                상세 보기 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+              </span>
+            </div>
+          </div>
+        </article>
+      `).join('');
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    function openProjectModal(projId) {
+      const proj = projectsData.find(p => p.id === projId);
+      if (!proj) return;
+      document.getElementById('modal-category').textContent = proj.categoryLabel;
+      document.getElementById('modal-title').textContent = proj.title;
+      document.getElementById('modal-period').textContent = proj.period;
+      document.getElementById('modal-role').textContent = proj.role;
+      document.getElementById('modal-problem').textContent = proj.problem;
+      document.getElementById('modal-solution').textContent = proj.solution;
+      document.getElementById('modal-impact').textContent = proj.impact;
+      document.getElementById('modal-tags').innerHTML = proj.tags.map(t => `<span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300">${t}</span>`).join('');
+      document.getElementById('project-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    function closeProjectModal() {
+      document.getElementById('project-modal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function initTheme() {
+      let savedTheme = null;
+      try { savedTheme = localStorage.getItem('portfolio_theme'); } catch (e) {}
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        try { localStorage.setItem('portfolio_theme', isDark ? 'dark' : 'light'); } catch (e) {}
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      renderSkills();
+      renderProjects();
+      if (window.lucide) window.lucide.createIcons();
+
+      // Mobile menu
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      });
+
+      // Skill filter buttons
+      document.getElementById('skill-filters').addEventListener('click', (e) => {
+        const btn = e.target.closest('.skill-filter-btn');
+        if (!btn) return;
+        activeSkillCat = btn.dataset.skillCat;
+        document.querySelectorAll('.skill-filter-btn').forEach(b => {
+          const active = b.dataset.skillCat === activeSkillCat;
+          b.className = active
+            ? 'skill-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white dark:bg-white dark:text-slate-900 transition-colors'
+            : 'skill-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-800 dark:hover:bg-slate-800 transition-colors';
+        });
+        renderSkills();
+      });
+
+      // Project filter buttons
+      document.getElementById('project-filters').addEventListener('click', (e) => {
+        const btn = e.target.closest('.proj-filter-btn');
+        if (!btn) return;
+        activeProjCat = btn.dataset.projCat;
+        document.querySelectorAll('.proj-filter-btn').forEach(b => {
+          const active = b.dataset.projCat === activeProjCat;
+          b.className = active
+            ? 'proj-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white transition-colors'
+            : 'proj-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-800 dark:hover:bg-slate-800 transition-colors';
+        });
+        renderProjects();
+      });
+
+      // Project card click
+      document.getElementById('projects-grid').addEventListener('click', (e) => {
+        const card = e.target.closest('.project-card');
+        if (card) openProjectModal(card.dataset.projectId);
+      });
+
+      // Modal close
+      document.getElementById('close-modal-btn').addEventListener('click', closeProjectModal);
+      document.getElementById('project-modal').addEventListener('click', (e) => {
+        if (e.target.id === 'project-modal') closeProjectModal();
+      });
+
+      // Print buttons
+      document.getElementById('print-btn').addEventListener('click', () => window.print());
+      document.getElementById('footer-print-btn').addEventListener('click', () => window.print());
+
+      // Quick Edit Modal
+      const editModal = document.getElementById('edit-modal');
+      function openEditModal() {
+        document.getElementById('input-name').value = document.getElementById('card-name').textContent.trim();
+        document.getElementById('input-role').value = document.getElementById('hero-role').textContent.trim();
+        document.getElementById('input-headline').value = document.getElementById('hero-headline').textContent.trim();
+        document.getElementById('input-bio').value = document.getElementById('hero-bio').textContent.trim();
+        editModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeEditModal() {
+        editModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+
+      document.getElementById('edit-profile-btn').addEventListener('click', openEditModal);
+      document.getElementById('close-edit-btn').addEventListener('click', closeEditModal);
+      document.getElementById('cancel-edit-btn').addEventListener('click', closeEditModal);
+      editModal.addEventListener('click', (e) => {
+        if (e.target.id === 'edit-modal') closeEditModal();
+      });
+
+      document.getElementById('edit-profile-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('input-name').value.trim();
+        const role = document.getElementById('input-role').value.trim();
+        const headline = document.getElementById('input-headline').value.trim();
+        const bio = document.getElementById('input-bio').value.trim();
+
+        if (name) {
+          document.getElementById('nav-name').textContent = name;
+          document.getElementById('card-name').textContent = name;
+          document.getElementById('footer-name').textContent = name;
+        }
+        if (role) document.getElementById('hero-role').textContent = role;
+        if (headline) document.getElementById('hero-headline').textContent = headline;
+        if (bio) document.getElementById('hero-bio').textContent = bio;
+
+        closeEditModal();
+        showToast('기본 정보가 화면에 반영되었습니다.');
+      });
+
+      // Escape key closes modals
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeProjectModal();
+          closeEditModal();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
